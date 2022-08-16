@@ -1,0 +1,19 @@
+<%= form_for(@task) do |f| %>
+  <%= form_tag(class: "") %>
+  <div class="mb-3">
+  <%= f.label(:title, class: "form-label") %>
+  <%= f.text_field(:title, class: "form-control") %>
+  </div>
+  <div class="mb-3">
+  <%= f.label(:details, class: "form-label") %>
+  <%= f.text_area(:details, class: "form-control") %>
+  </div>
+  <div>
+  <% if params[:action] == "edit" %>
+
+    <%= f.check_box(:completed) %>
+    <%= f.label(:completed, "Completed") %>
+  <% end %>
+  </div>
+  <%= f.submit(class: "btn btn-primary mt-4") %>
+<% end %>
