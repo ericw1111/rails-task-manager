@@ -1,7 +1,8 @@
-<h1>My Tasks</h1>
+<h1>My Tasks <i class="fa-regular fa-square-check"></i></h1>
 <ul>
 <% @tasks.each do |task| %>
   <li>
+    <i class="<%= task.completed ? "fa-regular fa-square-check" : "fa-regular fa-square" %>"></i>
     <%= link_to task.title, task_path(task) %>
     <%= link_to "✏️", edit_task_path(task) %>
     <%= link_to "🗑", delete_task_path(task),
